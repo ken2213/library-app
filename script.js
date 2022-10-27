@@ -14,6 +14,10 @@ const myLibrary = [{
 }];
 
 
+
+
+
+
 // todo: Creates an HTML Element inside the Book
 function createBookElement(el, content, className) {
   const element = document.createElement(el);
@@ -22,8 +26,34 @@ function createBookElement(el, content, className) {
   return element;
 }
 
+// todo: Creates a Read Element inside the book
+function createReadElement(bookItem, book) {
+  let read = document.createElement('div');
+  read.setAttribute('class', 'book-read');
+  read.appendChild(createBookElement('h1', 'Read?', "book-read-title"));
+  let input = document.createElement('input');
+  input.type = 'checkbox';
+  input.addEventListener('click', (e) => {
+    if(e.target.checked){
+      bookItem.setAttribute('class', 'card book read-checked')
+      book.read = true;
+      // renderBooks();
+    } else {
+      bookItem.setAttribute('class', 'card book read-unchecked')
+      book.read = false;
+      //renderBooks();
+    }
+  });
+  if (book.read) {
+    input.checked = true;
+    bookItem.setAttribute('class', 'card book read-checked');
+  }
+  read.appendChild(input);
+  return read;
+}
 
-// todo: Creates a Book Item for the library
+
+// todo: Creates a formatted Book Item for the library
 function createBookItem (book, index) {
   const bookItem = document.createElement('div');
   bookItem.setAttribute('id', index);
@@ -38,6 +68,9 @@ function createBookItem (book, index) {
   bookItem.appendChild(
     createBookElement("h1", `Pages: ${book.pages}`, "book-pages")
   );
+
+  bookItem.appendChild(createReadElement(bookItem, book))
+
   books.insertAdjacentElement('afterbegin', bookItem) //todo: inserts the "bookItem" inside the "books" class
 }
 
