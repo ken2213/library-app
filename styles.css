@@ -26,38 +26,15 @@ header > button > .fa-plus {
   font-size: 30px;
 }
 
-
-
-/* ! MODAL STYLING */
-
-#modal-container-hide {
-  display: none;
-
+/* Collections of Books Styling */
+.books {
+  margin: 20px 20px 10px 20px;
 }
 
-
-#modal-container {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Individual Card Styling*/
+.card {
   color: white;
-  background-color: hsla(0, 0%, 0%, 0.7);
-  padding: 20px 0;
+  background-color: salmon;
+
 }
-
-#modal-content {
-  height: 550px;
-  width: 600px;
-  border-radius: 20px;
-  background-color: lightcoral;
-  padding: 20px;
-}
-
-#form-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-
 

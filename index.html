@@ -21,71 +21,17 @@
 
   <!-- ! CONTAINS THE COLLECTION OF BOOKS AND FORM MODAL -->
   <main id="main-container">
-    <div id="books-library">
 
+    <div id="books-library">
+      <h3>Your Books</h3>
+      <div class="books cards">
+        <!-- Section for all project cards -->
+        
+      </div>
     </div>
 
     <!--! POP UP MODAL FORM -->
 
-    <!-- todo: INITIALLY HIDES THE MODAL -->
-    <div id="modal-container-hide">
-      <!-- todo: MODAL -->
-      <div id="modal-container" class="w3-modal">
-        <div id="modal-content" class="w3-animate-zoom">
-          <div id="form-header">
-            
-            <h1>Enter Book Details</h1>
-            <span onclick="document.getElementById('modal-container-hide').style.display='none'" class="w3-button">&times;</span>
-          </div>
-
-
-          <form id="form-content">
-            <div class="modal-input-field">
-              <label for="book-title">Title:</label>
-              <input type="text" 
-                    name="book-title"
-                    id="book-title" 
-                    class="modal-form-input">
-            </div>
-            <div class="modal-input-field">
-              <label for="book-author">Author:</label>
-              <input type="text"
-                    name="book-author"
-                    id="book-author"
-                    class="modal-form-input">
-            </div>
-            <div class="modal-input-field">
-              <label for="book-pages">Pages:</label>
-              <input type="number"
-                    min="0"
-                    name="book-pages"
-                    id="book-pages"
-                    class="modal-form-input">
-            </div>
-            <fieldset role="radiogroup">
-              <legend>Read Book?</legend>
-              <label for="yes">
-                <input type="radio" 
-                      id="yes" 
-                      name="read" 
-                      value="yes" 
-                      checked>
-                <span>Yes</span>
-              </label>
-              <label for="no">
-                <input type="radio" id="no" name="read" value="no">
-                <span>No</span>
-              </label>
-            </fieldset>
-            <div id="form-button">
-              <button id="submit">Submit</button>
-            </div>
-
-          </form>
-        </div>
-      </div>
-    </div>
-    </div>
 
     
   </main>
