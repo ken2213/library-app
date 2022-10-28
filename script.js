@@ -14,7 +14,7 @@ window.addEventListener('click', (e) => {
 
 span.addEventListener('click', () => {
   modal.style.display = 'none';
-})
+});
 
 
 addBook.addEventListener('click', () => {
@@ -171,7 +171,7 @@ function createBookItem (book, index) {
   );
 
   bookItem.appendChild(createReadElement(bookItem, book))
-  bookItem.appendChild(createBookElement('button', 'X', 'delete'));
+  bookItem.appendChild(createBookElement('button', 'x', 'delete'));
   bookItem.appendChild(createEditIcon(book));
    
   bookItem.querySelector('.delete').addEventListener('click', () => {
@@ -197,6 +197,5 @@ function saveAndRenderBooks () {
 }
 
 addLocalStorage();
-
 
 

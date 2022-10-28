@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;900&family=Oswald:wght@700&family=Poppins&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
 }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  background-color: hsl(22, 55%, 39%);
 }
-
 
 h1 {
   font-size: 24px;
@@ -15,52 +19,109 @@ h1 {
 
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 100px;
   align-items: center;
-  height: 15vh;
+  height: 100px;
   color: white;
-  background-color: lightblue;
+  background-color: hsl(22, 55%, 19%);
 }
 
 header > h1 {
-  font-size: 40px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
 }
 
-header > button > .fa-plus {
-  font-size: 30px;
+.reader-icon {
+  filter: invert(98%) sepia(22%) saturate(488%) hue-rotate(351deg) brightness(88%) contrast(90%);
+  margin-right: 10px;
 }
+
+/* Add Book Button Styling */
+.add-book {
+  font-size: 25px;
+  background-color: hsl(58, 25%, 79%);
+  padding: 5px 15px;
+  border-radius: 40px;
+  border: none;
+}
+
+.add-book:hover {
+  background-color: hsla(58, 25%, 89%);
+  transform: scale(1.075);
+  cursor: pointer;
+}
+
+.add-book:active {
+  color: white;
+  background-color: hsla(58, 25%, 69%);
+  transform: scale(1);
+}
+
+
+main {
+  padding: 20px 40px;
+}
+
+
 
 /* Collections of Books Styling */
 .books {
-  margin: 20px 20px 20px 20px;
+  margin: 0px 20px 20px 20px;
+
 }
 
 /* Individual Card Styling*/
 .card {
   color: white;
-  background-color: salmon;
+  background-color: hsl(30, 53%, 61%);
   width: 400px;
-  font-size: 8px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 40px 0 10px 20px;
   margin-bottom: 10px;
 }
 
+
+.card > h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+.card > .book-read > h1 {
+  font-size: 18px;
+}
+
+
+.book > .book-title {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+
 .edit-icon {
   position: relative;
-  bottom: 205px;
-  left: 300px;
+  bottom: 175px;
+  left: 280px;
 }
 
 .delete {
   position: relative;
-  bottom: 205px;
-  left:  350px;
-  font-size: 10px;
-  padding: 4px 6px;
-  border-radius: 10px;
+  bottom: 175px;
+  left:  340px;
+  font-size: 16px;
+  padding: 0px 12px 4px 12px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  background-color: hsl(0, 100%, 30%);
 }
 
+.delete:hover {
+  background-color: hsl(0, 100%, 60%);
+}
 
 .book-read {
   display: flex;
@@ -74,10 +135,11 @@ header > button > .fa-plus {
 
 
 .modal {
+  font-family: 'Nunito Sans', sans-serif;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 30vh; /* Location of the box */
+  padding-top: 10vh; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -87,14 +149,53 @@ header > button > .fa-plus {
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
+.modal-form > .form-title {
+  font-size: 40px;
+  font-weight: 900;
+}
+
 .modal-content {
-  background-color: white;
+  color: whitesmoke;
+  background-color: hsl(58, 25%, 29%);
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
   margin: auto;
-  padding: 5px 5px 5px 20px;
+  padding: 5px 5px 25px 20px;
   border: 1px solid #888;
-  width: 350px;
+  width: 400px;
   border-radius: 10px;
 }
+
+.modal-input-field {
+  font-size: 18px;
+}
+
+.modal-input-field > input {
+  font-size: 18px;
+  width: 100%;
+}
+
+
+.submit-modal-form {
+  display: flex;
+  justify-content: center;
+}
+
+
+.submit-modal-form > button {
+  color: white;
+  background-color: hsl(120, 100%, 10%);
+  padding: 10px;
+  width: 50%;
+  border-radius: 10px;
+  border: none;
+}
+
+
+.submit-modal-form > button:hover {
+  background-color: hsl(120, 100%, 45%);
+}
+
+
 
