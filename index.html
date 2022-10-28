@@ -14,8 +14,8 @@
   <!-- ! CONTAINS LIBRARY TEXT AND ADD BOOK BUTTON-->
   <header>
     <h1>Library</h1>
-    <button onclick="document.getElementById('modal-container-hide').style.display='block'">
-      <i class="fa-solid fa-plus" id="add-book"></i>
+    <button class="add-book">
+      <i class="fa-solid fa-plus"></i>
     </button>
   </header>
 
@@ -26,14 +26,72 @@
       <h3>Your Books</h3>
       <div class="books cards">
         <!-- Section for all project cards -->
-        
+  
       </div>
     </div>
 
-    <!--! POP UP MODAL FORM -->
+  </main>
+
+  <!--! POP UP MODAL FORM -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-form">
+        <h1 class="form-title"></h1>
+        <form class="add-book-form">
+
+          <div class="modal-input-field">
+            <label for="book-title">Title:</label>
+            <input 
+              type="text" 
+              name="book-title" 
+              id="book-title" 
+              class="modal-form-input">
+          </div>
+
+          <div class="modal-input-field">
+            <label for="book-author">Author:</label>
+            <input 
+              type="text" 
+              name="book-author" 
+              id="book-author" 
+              class="modal-form-input">
+          </div>
+
+          <div class="modal-input-field">
+            <label for="book-pages">Pages:</label>
+            <input 
+              type="number" 
+              min="0"
+              name="book-pages" 
+              id="book-pages" 
+              class="modal-form-input">
+          </div>
+
+          <div class="modal-input-field">
+            <span class="modal-read">Read?</span>
+            <label class="container">
+              <input 
+                type="checkbox" 
+                name="book-read" 
+                id="book-read" 
+                class="checkmark">
+            </label>
+          </div>
+          
+          <div class="submit-modal-form">
+            <button type="submit" class="btn form-add-button"></button>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
 
 
     
-  </main>
 </body>
 </html>
