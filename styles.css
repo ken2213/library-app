@@ -67,18 +67,27 @@ main {
 
 /* Collections of Books Styling */
 .books {
-  margin: 0px 20px 20px 20px;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
 }
 
 /* Individual Card Styling*/
 .card {
   color: white;
   background-color: hsl(30, 53%, 61%);
-  width: 400px;
+  width: auto;
   border-radius: 10px;
-  padding: 40px 0 10px 20px;
+  padding: 10px 10px 10px 20px;
   margin-bottom: 10px;
+}
+
+.edit-delete-container {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 10px;
+
 }
 
 
@@ -101,26 +110,26 @@ main {
 }
 
 
-.edit-icon {
-  position: relative;
-  bottom: 175px;
-  left: 280px;
-}
-
 .delete {
-  position: relative;
-  bottom: 175px;
-  left:  340px;
   font-size: 16px;
   padding: 0px 12px 4px 12px;
   border: none;
   border-radius: 15px;
   color: white;
   background-color: hsl(0, 100%, 30%);
+  cursor: pointer;
 }
 
 .delete:hover {
   background-color: hsl(0, 100%, 60%);
+}
+
+.edit-icon {
+  cursor: grab;
+}
+
+.edit-icon:active {
+  cursor: grabbing;
 }
 
 .book-read {

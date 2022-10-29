@@ -45,7 +45,7 @@ addBookForm.addEventListener('submit', (e) => {
   const data = new FormData(e.target);
   let newBook = {};
   for(let [name, value] of data) {
-    if(name === 'book-read') {
+    if(name === 'book-read') {0
       newBook['book-read'] = true;
     } else {
       newBook[name] = value || "";
@@ -58,7 +58,7 @@ addBookForm.addEventListener('submit', (e) => {
 
   if(document.querySelector('.form-title').textContent === 'Edit Book') {
     let id = e.target.id;
-    let editBook = myLibrary.filter(book => book.id = id)[0]
+    let editBook = myLibrary.filter(book => book.id == id)[0]
     editBook.title = newBook['book-title'];
     editBook.author = newBook['book-author'];
     editBook.pages = newBook['book-pages'];
@@ -72,8 +72,6 @@ addBookForm.addEventListener('submit', (e) => {
       newBook['book-read']
       );
   }
-
-  
 
   addBookForm.reset();
   modal.style.display = "none";
@@ -142,9 +140,9 @@ function createEditIcon(book) {
   const editIcon = document.createElement('img');
   editIcon.src = 'icons/edit-pencil.svg';
   editIcon.setAttribute('class', 'edit-icon');
-  editIcon.addEventListener('click', (e) => {
+  editIcon.addEventListener('click', () => {
     fillOutEditForm(book);
-  })
+  });
   return editIcon;
 }
 
@@ -156,7 +154,20 @@ function deleteBook(index) {
 
 // todo: Creates a formatted Book Item for the library
 function createBookItem (book, index) {
+  // bookItem is a parent element
   const bookItem = document.createElement('div');
+
+  // editAndDelete is a child of bookItem 
+  const editAndDelete = document.createElement('div');
+
+  bookItem.appendChild(editAndDelete);
+  editAndDelete.setAttribute('class', 'edit-delete-container')
+  
+  editAndDelete.appendChild(createEditIcon(book));
+  editAndDelete.appendChild(createBookElement('button', 'x', 'delete'));
+
+
+
   bookItem.setAttribute('id', index);
   bookItem.setAttribute('key', index);
   bookItem.setAttribute('class', 'card book');
@@ -170,13 +181,13 @@ function createBookItem (book, index) {
     createBookElement("h1", `Pages: ${book.pages}`, "book-pages")
   );
 
-  bookItem.appendChild(createReadElement(bookItem, book))
-  bookItem.appendChild(createBookElement('button', 'x', 'delete'));
-  bookItem.appendChild(createEditIcon(book));
-   
+  bookItem.appendChild(createReadElement(bookItem, book));
+  
   bookItem.querySelector('.delete').addEventListener('click', () => {
     deleteBook(index);
-  })
+  });
+
+
 
   //todo: inserts the "bookItem" inside the "books" class
   books.insertAdjacentElement('afterbegin', bookItem) 
