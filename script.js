@@ -146,8 +146,9 @@ function createEditIcon(book) {
   return editIcon;
 }
 
+
 function deleteBook(index) {
-  myLibrary.splice(index, 1)
+  myLibrary.splice(index, 1);
   saveAndRenderBooks();
 }
 
@@ -167,10 +168,10 @@ function createBookItem (book, index) {
   editAndDelete.appendChild(createBookElement('button', 'x', 'delete'));
 
 
-
   bookItem.setAttribute('id', index);
   bookItem.setAttribute('key', index);
   bookItem.setAttribute('class', 'card book');
+
   bookItem.appendChild(
     createBookElement("h1", `Title: ${book.title}`, "book-title")
   );
@@ -186,7 +187,6 @@ function createBookItem (book, index) {
   bookItem.querySelector('.delete').addEventListener('click', () => {
     deleteBook(index);
   });
-
 
 
   //todo: inserts the "bookItem" inside the "books" class
